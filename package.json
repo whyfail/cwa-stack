@@ -1,7 +1,7 @@
 {
   "name": "create-wl-app",
-  "version": "1.0.4",
-  "description": "快速构建前端项目",
+  "version": "1.0.5",
+  "description": "现代化前端脚手架",
   "bin": {
     "create-wl-app": "bin/create-wl-app.js"
   },
@@ -14,7 +14,7 @@
   ],
   "author": "wulei",
   "license": "ISC",
-  "homepage": "https://whyfail.gitee.io/cwa-document/",
+  "homepage": "https://whyfail.github.io/cwa-docs/",
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^9.3.0",
