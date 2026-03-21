@@ -96,22 +96,22 @@ git commit -m "feat: 初始化项目"
 ### 📦 步骤 7：安装依赖
 
 ```bash
-# 使用 npm 安装依赖
-npm install
+# 使用 pnpm 安装依赖
+pnpm install
 ```
 
 ### 🚀 步骤 8：启动开发服务器
 
 ```bash
 # 启动开发服务器（毫秒级启动）
-npm run dev
+pnpm run dev
 ```
 
 ### 🏗️ 步骤 9：构建生产版本
 
 ```bash
 # 构建生产版本（秒级构建）
-npm run build
+pnpm run build
 ```
 
 ## 🎯 项目结构
@@ -155,10 +155,10 @@ my-awesome-app/
 
 | 命令 | 描述 |
 |------|------|
-| `npm run dev` | 启动开发服务器 |
-| `npm run build` | 构建生产版本 |
-| `npm run preview` | 预览生产构建 |
-| `npm run lint` | 运行 ESLint 检查 并修复错误 |
+| `pnpm run dev` | 启动开发服务器 |
+| `pnpm run build` | 构建生产版本 |
+| `pnpm run preview` | 预览生产构建 |
+| `pnpm run lint` | 运行 ESLint 检查 并修复错误 |
 
 ## 🚀 下一步
 

@@ -1,5 +1,4 @@
 {
   "vite-react": "https://gitee.com/whyfail/vite_react_init.git",
-  "vite-vue3": "https://gitee.com/whyfail/vite_vue3_init.git",
-  "vite-uni-app": "https://gitee.com/whyfail/vite_uni_init.git"
+  "vite-vue3": "https://gitee.com/whyfail/vite_vue3_init.git"
 }

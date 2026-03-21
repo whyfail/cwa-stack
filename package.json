@@ -1,6 +1,6 @@
 {
   "name": "create-wl-app",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "现代化前端脚手架",
   "bin": {
     "create-wl-app": "bin/create-wl-app.js"
