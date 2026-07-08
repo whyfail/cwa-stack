@@ -1,6 +1,6 @@
 {
   "vite-react": "https://gitee.com/whyfail/vite_react_init.git",
   "vite-vue3": "https://gitee.com/whyfail/vite_vue3_init.git",
-  "next-react-ssr": "https://gitee.com/whyfail/vite_react_ssr_init.git",
-  "nuxt-vue3-ssr": "https://gitee.com/whyfail/vite_vue3_ssr_init.git"
+  "next-react-ssr": "https://github.com/whyfail/vite_react_ssr_init.git",
+  "nuxt-vue3-ssr": "https://github.com/whyfail/vite_vue3_ssr_init.git"
 }
