@@ -2,13 +2,13 @@
 
 ## 🚀 什么是 create-wl-app？
 
-create-wl-app 是一款**现代化前端脚手架**，基于 Vite 8 + Rolldown 构建，旨在为开发者提供**极速、便捷、开箱即用**的前端项目创建体验。
+create-wl-app 是一款**现代化前端脚手架**，提供 SPA 与 SSR 两类企业级模板，旨在为开发者提供**极速、便捷、开箱即用**的前端项目创建体验。
 
 ### ✨ 核心优势
 
-- ⚡ **极速构建**：基于 Rust 驱动的 Vite 8 + Rolldown，构建速度提升 15 倍
+- ⚡ **极速构建**：SPA 模板基于 Rust 驱动的 Vite 8 + Rolldown，SSR 模板基于 Next.js / Nuxt Node SSR
 - 📦 **开箱即用**：内置完整项目结构，无需复杂配置
-- 🎨 **多框架支持**：支持 React 18、Vue 3 两大主流框架
+- 🎨 **多框架支持**：支持 React、Vue 3、Next.js、Nuxt 四类模板
 - 🔧 **开发友好**：集成 ESLint、Git 钩子、开发工具等
 - 📱 **完美适配**：自动适配各种屏幕尺寸
 
@@ -59,6 +59,8 @@ npx create-wl-app create
 ? 请选择模板类型：
 ❯ React 模板
   Vue3 模板
+  next-react-ssr
+  nuxt-vue3-ssr
 ```
 
 ### 📝 步骤 3：填写项目信息
@@ -118,7 +120,7 @@ pnpm run build
 
 创建的项目将包含以下核心结构：
 
-### React 模板结构
+### SPA 模板结构
 
 ```
 my-awesome-app/
@@ -134,20 +136,20 @@ my-awesome-app/
 └── package.json       # 项目依赖
 ```
 
-### Vue3 模板结构
+### SSR 模板结构
 
 ```
 my-awesome-app/
 ├── src/
-│   ├── assets/        # 静态资源
-│   ├── components/    # 通用组件
-│   ├── common/        # 公共工具
-│   ├── stores/        # 状态管理（Pinia）
-│   ├── views/         # 页面组件
-│   ├── App.vue        # 根组件
-│   └── main.js        # 入口文件
-├── eslint.config.mjs  # ESLint 配置
-├── vite.config.js     # Vite 配置
+│   ├── app 或 pages/  # SSR 路由入口
+│   ├── features/      # 业务功能模块
+│   ├── shared/        # API、组件、工具与 UI 基础设施
+│   ├── server/        # 服务端专属能力
+│   └── test/          # 测试工具与 setup
+├── tests/e2e/         # Playwright E2E
+├── AGENTS.md          # AI Agent 开发约束
+├── playwright.config.ts
+├── vitest.config.ts
 └── package.json       # 项目依赖
 ```
 
@@ -158,7 +160,12 @@ my-awesome-app/
 | `pnpm run dev` | 启动开发服务器 |
 | `pnpm run build` | 构建生产版本 |
 | `pnpm run preview` | 预览生产构建 |
-| `pnpm run lint` | 运行 ESLint 检查 并修复错误 |
+| `pnpm run test` | 运行单元与组件测试 |
+| `pnpm run test:coverage` | 运行覆盖率门禁 |
+| `pnpm run test:component-coverage` | 检查每个组件是否有组件测试 |
+| `pnpm run test:e2e` | 运行 Playwright E2E |
+| `pnpm run typecheck` | 运行类型检查 |
+| `pnpm run lint` | 运行代码规范检查 |
 
 ## 🚀 下一步
 
