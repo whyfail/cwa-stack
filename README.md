@@ -51,16 +51,21 @@ create-wl-app 是一款**现代化前端脚手架**，提供 SPA 与 SSR 两类�
 npx create-wl-app create
 ```
 
-### 🎯 步骤 2：选择模板
+### 🎯 步骤 2：选择技术栈、应用类型和模板
 
-根据提示选择你想要使用的框架模板：
+根据提示先选择技术栈，再选择单页面应用或 SSR，最后选择具体模板：
 
 ```
-? 请选择模板类型：
-❯ React 模板
-  Vue3 模板
-  next-react-ssr
-  nuxt-vue3-ssr
+? 请选择技术栈：
+❯ React
+  Vue
+
+? 请选择应用类型：
+❯ 单页面应用
+  SSR 服务端渲染
+
+? 请选择模板：
+❯ Vite React 企业级模板（vite-react）
 ```
 
 ### 📝 步骤 3：填写项目信息
