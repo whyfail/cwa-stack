@@ -2,13 +2,13 @@
 
 ## 🚀 什么是 create-wl-app？
 
-create-wl-app 是一款**现代化前端脚手架**，提供 SPA 与 SSR 两类企业级模板，旨在为开发者提供**极速、便捷、开箱即用**的前端项目创建体验。
+create-wl-app 是一款**现代化全栈项目脚手架**，提供 React/Vue 的 SPA 与 SSR 企业级前端模板和 Spring Boot 企业级后端模板，旨在为开发者提供**极速、便捷、开箱即用**的项目创建体验。
 
 ### ✨ 核心优势
 
 - ⚡ **极速构建**：SPA 模板基于 Rust 驱动的 Vite 8 + Rolldown，SSR 模板基于 Next.js / Nuxt Node SSR
 - 📦 **开箱即用**：内置完整项目结构，无需复杂配置
-- 🎨 **多框架支持**：支持 React、Vue 3、Next.js、Nuxt 四类模板
+- 🎨 **多框架支持**：支持 React、Vue 3、Next.js、Nuxt 四类前端模板与 Spring Boot 后端模板
 - 🔧 **开发友好**：集成 ESLint、Git 钩子、开发工具等
 - 📱 **完美适配**：自动适配各种屏幕尺寸
 

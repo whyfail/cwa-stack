@@ -1,6 +1,6 @@
 ---
 name: create-project
-description: 基于 create-wl-app 的前端项目快速创建工具，支持 React/Vue3，通过管道符实现一键创建。
+description: 基于 create-wl-app 的项目快速创建工具，支持 React/Vue3 前端与 Spring Boot 后端模板，通过管道符实现一键创建。
 ---
 
 ## 触发条件
@@ -16,20 +16,26 @@ description: 基于 create-wl-app 的前端项目快速创建工具，支持 Rea
 
 ### 步骤 1：询问项目信息
 询问用户以下信息：
-1. 项目类型：React 还是 Vue3？（模板名称：`vite-react` 或 `vite-vue3`）
+1. 项目类型：React、Vue3 前端，还是 Spring Boot 后端？（模板名称：`vite-react`、`vite-vue3`、`next-react-ssr`、`nuxt-vue3-ssr` 或 `spring-boot`）
 2. 项目名称
 3. 项目描述（可选）
 
 ### 步骤 2：使用管道符创建项目
 根据用户输入的项目类型和名称，使用管道符一次性创建项目：
 ```bash
-# 格式：模板名称\n项目名称\n项目描述（可选）
+# 前端模板格式：模板名称\n项目名称\n项目描述（可选）
 echo -e "vite-react\nmy-project\n项目描述" | npx create-wl-app create
+
+# 后端模板格式：模板名称\n项目名称\nJava包名\n项目描述（可选）
+echo -e "spring-boot\nmy-backend\ncom.mycompany.mybackend\n项目描述" | npx create-wl-app create
 ```
 
 支持的模板类型：
 - `vite-react` - React 18 项目
 - `vite-vue3` - Vue 3 项目
+- `next-react-ssr` - Next.js React SSR 项目
+- `nuxt-vue3-ssr` - Nuxt Vue 3 SSR 项目
+- `spring-boot` - Spring Boot 后端项目（Java 25 + Spring Boot 4，需提供 Java 包名，例如 com.mycompany.myapp）
 
 ### 步骤 3：进入项目目录并初始化 Git
 ```bash
