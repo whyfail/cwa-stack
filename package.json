@@ -1,6 +1,6 @@
 {
   "name": "create-wl-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "现代化前端与后端项目脚手架",
   "bin": {
     "create-wl-app": "bin/create-wl-app.js"
