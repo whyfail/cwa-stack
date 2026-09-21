@@ -1,11 +1,11 @@
 ---
 name: create-app
-description: 使用 npm 上发布的 create-wl-app 脚手架创建并初始化项目，覆盖 React、Vue 3、Next.js、Nuxt 四类前端模板和 Spring Boot 后端模板。用户说"新建一个项目""创建一个项目""初始化一个项目""创建前端/后端项目""新建 React/Vue/Next.js/Nuxt/Spring Boot 项目"，或表达要从零搭建新工程时使用。
+description: 使用 npm 上发布的 cwa-stack（原 create-wl-app）全栈工程引擎创建并初始化项目：覆盖 React、Vue 3、Next.js、Nuxt × Spring Boot 的全栈组合工程，以及独立前端/后端模板。用户说"新建一个项目""创建一个项目""初始化一个项目""创建前端/后端/全栈项目"时使用。
 ---
 
 # Create App
 
-使用 npm 包 `create-wl-app` 创建项目，并按模板类型完成依赖安装与基础验证。
+使用 npm 包 `cwa-stack` 创建项目（原 create-wl-app），并按模板类型完成依赖安装与基础验证。
 
 ## 收集信息
 
@@ -39,7 +39,7 @@ description: 使用 npm 上发布的 create-wl-app 脚手架创建并初始化�
 
 1. 检查环境：`node`（≥20，前端模板基线为 24 LTS）、`git`、`pnpm`、`npm`、`npx` 可用；`spring-boot` 模板额外确认 `java`（25）与 `docker`。缺少工具时报告具体缺项，不要擅自全局安装。
 2. 检查目标目录不存在。若已存在，停止并请用户更换名称或位置；绝不删除、清空或覆盖。
-3. 从本技能目录执行包装脚本。脚本通过 npm 获取 `create-wl-app@latest`，不依赖本地源码或全局安装：
+3. 从本技能目录执行包装脚本。脚本通过 npm 获取 `cwa-stack@latest`，不依赖本地源码或全局安装：
 
    ```bash
    # 前端模板
@@ -78,7 +78,7 @@ description: 使用 npm 上发布的 create-wl-app 脚手架创建并初始化�
    3. 运行项目提供的快速质量检查。优先读取 `package.json` 的 scripts；至少运行可用的 `typecheck`、`lint` 和 `build`。若耗时或环境限制导致无法运行，明确报告。
    4. 启动 `pnpm dev`，保持进程运行，并报告终端实际输出的本地访问地址。端口被占用时使用工具自动选择的其他端口，不猜测地址。
 
-   **全栈组合工程（--preset 创建，需要 create-wl-app 1.2.0+）**
+   **全栈组合工程（--preset 创建）**
    1. 先读取根目录 `AGENTS.md` 与 `cwa.config.json`：后者是机器可读清单（前后端目录、端口、契约路径、命令）。
    2. 执行 `pnpm run setup`：环境门禁、前端冻结安装、生成随机密码 `.env`、依据 `apps/api/openapi.yaml` 生成前端 API Client（需要 Java 25 与 Docker）。
    3. 启动完整系统执行 `pnpm run dev`（compose 拉起 MySQL/Redis、Spring Boot、前端）；readiness 就绪后报告 Web/API/Swagger 地址。
@@ -93,7 +93,7 @@ description: 使用 npm 上发布的 create-wl-app 脚手架创建并初始化�
 
 ## 行为约束
 
-- 始终使用 npm 包 `create-wl-app@latest`，不要依赖本地源码或全局安装。`spring-boot` 模板需要 1.1.0 及以上版本；全栈组合（`--preset`）需要 1.2.0 及以上版本。
+- 始终使用 npm 包 `cwa-stack@latest`，不要依赖本地源码或全局安装。`spring-boot` 模板需要 1.1.0 及以上版本；全栈组合（`--preset`）需要 1.2.0 及以上版本。
 - 需要联网访问 npm 注册表和模板仓库；网络失败时报告原始错误，不切换到本地副本。
 - 不在已存在的目录上运行生成器。
 - `spring-boot` 的 Java 包名必须匹配 `^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$`；不合法时向用户确认，不要擅自改写。

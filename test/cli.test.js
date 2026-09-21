@@ -4,7 +4,7 @@ const { spawnSync } = require("node:child_process")
 const path = require("node:path")
 const pkg = require("../package.json")
 
-const bin = path.join(__dirname, "..", "bin", "create-wl-app.js")
+const bin = path.join(__dirname, "..", "bin", "cwa-stack.js")
 
 test("--version 输出 package.json 中的版本号", () => {
   const result = spawnSync(process.execPath, [bin, "--version"], { encoding: "utf8" })

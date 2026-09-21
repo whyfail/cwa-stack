@@ -176,7 +176,7 @@ export function checkFiles(rootDir) {
       name: `文件 ${relative}`,
       status: exists ? STATUS.PASS : STATUS.FAIL,
       detail: exists ? "存在" : "缺失",
-      fix: exists ? null : "工程结构不完整，请用 create-wl-app 重新生成",
+      fix: exists ? null : "工程结构不完整，请用 cwa-stack 重新生成",
     });
   }
 

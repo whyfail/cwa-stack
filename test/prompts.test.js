@@ -55,7 +55,7 @@ test("交互问题：模板随技术栈和应用类型联动", () => {
 
 test("交互问题：项目名称拒绝空值与已存在目录", () => {
   assert.equal(projectNameQ.validate(""), undefined)
-  assert.equal(projectNameQ.validate("lib"), undefined) // create-wl-app 仓库根目录确实存在 lib
+  assert.equal(projectNameQ.validate("lib"), undefined) // 仓库根目录确实存在 lib
   assert.equal(projectNameQ.validate("definitely-not-exists-xyz"), true)
 })
 

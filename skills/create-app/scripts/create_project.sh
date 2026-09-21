@@ -140,7 +140,7 @@ fi
 
 (
   cd "$parent_dir"
-  printf '%s' "$input" | npx --yes create-wl-app@latest create
+  printf '%s' "$input" | npx --yes cwa-stack@latest create
 )
 
 if (( is_fullstack )); then

@@ -1,8 +1,18 @@
-# 🎉 欢迎使用 create-wl-app
+# 🎉 欢迎使用 cwa-stack
 
-## 🚀 什么是 create-wl-app？
+> [!IMPORTANT]
+> 本包原名为 **create-wl-app**，自 1.0.0 起更名为 **cwa-stack**（CWA = Create Whole-stack App）。
+> 使用方式不变：`npx cwa-stack create ...`；旧包 `create-wl-app` 已标记弃用，请迁移到新包名。
 
-create-wl-app 是一款**现代化全栈项目脚手架**，提供 React/Vue 的 SPA 与 SSR 企业级前端模板和 Spring Boot 企业级后端模板，旨在为开发者提供**极速、便捷、开箱即用**的项目创建体验。
+## 🚀 什么是 cwa-stack？
+
+cwa-stack 是一款 **AI 时代的全栈工程引擎**，提供 React/Vue 的 SPA 与 SSR 企业级前端模板和 Spring Boot 企业级后端模板：
+
+- **独立创建**：一条命令生成任一前端或后端工程
+- **全栈组合**：四个预设（`react-spring` / `vue-spring` / `next-spring` / `nuxt-spring`）一次生成前后端真实联通、单一 Git 仓库的全栈工程，模板源码零复制
+- **根级编排**：`setup / dev / verify / doctor / api:generate` 五个命令覆盖全栈生命周期
+- **契约驱动**：以后端 OpenAPI 3.1 为唯一事实来源，前端类型与 Client 自动生成
+- **AI 原生**：AGENTS.md + 机器可读 `cwa.config.json` + 随包 Agent 技能
 
 ### ✨ 核心优势
 
@@ -48,7 +58,7 @@ create-wl-app 是一款**现代化全栈项目脚手架**，提供 React/Vue 的
 
 ```bash
 # 使用 npx 创建项目
-npx create-wl-app create
+npx cwa-stack create
 ```
 
 ### 🎯 步骤 2：选择技术栈、应用类型和模板
@@ -76,11 +86,11 @@ npx create-wl-app create
 
 ```bash
 # 独立创建（--template 与 --preset 互斥）
-npx create-wl-app create my-web --template vite-react --description "My web application"
-npx create-wl-app create my-api --template spring-boot --package com.example.myapi
+npx cwa-stack create my-web --template vite-react --description "My web application"
+npx cwa-stack create my-api --template spring-boot --package com.example.myapi
 
 # 全栈组合：一次生成前端 apps/web + Spring Boot apps/api 的单 Git 仓库工程
-npx create-wl-app create my-app --preset react-spring --package com.example.myapp
+npx cwa-stack create my-app --preset react-spring --package com.example.myapp
 ```
 
 四个全栈预设：`react-spring`、`vue-spring`、`next-spring`、`nuxt-spring`。生成后进入项目执行 `pnpm run setup` 完成环境初始化（setup、dev、verify、doctor、api:generate 五个根级命令）。

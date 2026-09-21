@@ -1,16 +1,24 @@
 {
-  "name": "create-wl-app",
-  "version": "1.2.0",
-  "description": "现代化前端与后端项目脚手架",
+  "name": "cwa-stack",
+  "version": "1.0.0",
+  "description": "AI 时代的全栈工程引擎：一条命令生成前后端真实联通、可验证、可交付的企业级全栈工程（原 create-wl-app）",
   "bin": {
-    "create-wl-app": "bin/create-wl-app.js"
+    "cwa-stack": "bin/cwa-stack.js"
   },
   "scripts": {
     "test": "node --test test/*.test.js"
   },
   "keywords": [
-    "cli",
-    "template"
+    "cwa",
+    "fullstack",
+    "scaffold",
+    "vue",
+    "react",
+    "nuxt",
+    "nextjs",
+    "springboot",
+    "openapi",
+    "ai"
   ],
   "author": "wulei",
   "license": "ISC",

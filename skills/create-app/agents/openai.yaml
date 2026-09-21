@@ -1,4 +1,4 @@
 interface:
   display_name: "Create App"
-  short_description: "使用 create-wl-app 创建 React、Vue、Next.js、Nuxt 前端项目或 Spring Boot 后端项目"
+  short_description: "使用 cwa-stack 一条命令创建全栈组合工程（React/Vue/Next.js/Nuxt × Spring Boot）或独立前后端项目"
   default_prompt: "使用 $create-app 新建一个项目。"

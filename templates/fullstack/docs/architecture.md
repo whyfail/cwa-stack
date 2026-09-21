@@ -2,7 +2,7 @@
 
 ## 组合来源
 
-本项目由 create-wl-app 以预设 `{{{ preset }}}` 动态组合生成：前端模板 `{{{ frontendTemplate }}}` 装配在 `apps/web`，后端模板 `{{{ backendTemplate }}}` 装配在 `apps/api`。两套子项目均为独立模板原样生成，组合器未复制或派生新的模板仓库，因此升级需分别跟踪各模板上游。
+本项目由 cwa-stack 以预设 `{{{ preset }}}` 动态组合生成：前端模板 `{{{ frontendTemplate }}}` 装配在 `apps/web`，后端模板 `{{{ backendTemplate }}}` 装配在 `apps/api`。两套子项目均为独立模板原样生成，组合器未复制或派生新的模板仓库，因此升级需分别跟踪各模板上游。
 
 ## 运行拓扑
 

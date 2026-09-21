@@ -1,6 +1,6 @@
 # {{{ name }}} 全栈项目
 
-由 create-wl-app 组合创建（预设：`{{{ preset }}}`），前端位于 `apps/web`，Spring Boot 后端位于 `apps/api`。
+由 cwa-stack 组合创建（预设：`{{{ preset }}}`），前端位于 `apps/web`，Spring Boot 后端位于 `apps/api`。
 
 ## 常用命令
 
