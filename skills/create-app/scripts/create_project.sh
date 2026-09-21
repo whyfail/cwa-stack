@@ -3,20 +3,26 @@
 set -euo pipefail
 
 template=""
+preset=""
 project_name=""
 java_package=""
 description=""
 parent_dir=""
 
 usage() {
-  echo "Usage: $0 --template <template> --name <project-name> --parent <absolute-dir> [--package <java-package>] [--description <text>]" >&2
+  echo "Usage: $0 (--template <template> | --preset <preset>) --name <project-name> --parent <absolute-dir> [--package <java-package>] [--description <text>]" >&2
   echo "Templates: vite-react | vite-vue3 | next-react-ssr | nuxt-vue3-ssr | spring-boot" >&2
+  echo "Presets:   react-spring | vue-spring | next-spring | nuxt-spring" >&2
 }
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --template)
       template="${2:-}"
+      shift 2
+      ;;
+    --preset)
+      preset="${2:-}"
       shift 2
       ;;
     --name)
@@ -47,15 +53,43 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+if [[ -n "$template" && -n "$preset" ]]; then
+  echo "--template and --preset are mutually exclusive." >&2
+  usage
+  exit 2
+fi
+
+if [[ -z "$template" && -z "$preset" ]]; then
+  echo "Either --template or --preset is required." >&2
+  usage
+  exit 2
+fi
+
+is_fullstack=0
+is_spring=0
+
 case "$template" in
   vite-react|vite-vue3|next-react-ssr|nuxt-vue3-ssr)
-    is_spring=0
     ;;
   spring-boot)
     is_spring=1
     ;;
+  "")
+    ;;
   *)
     echo "Unsupported template: $template" >&2
+    exit 2
+    ;;
+esac
+
+case "$preset" in
+  react-spring|vue-spring|next-spring|nuxt-spring)
+    is_fullstack=1
+    ;;
+  "")
+    ;;
+  *)
+    echo "Unsupported preset: $preset" >&2
     exit 2
     ;;
 esac
@@ -65,9 +99,9 @@ if [[ ! "$project_name" =~ ^[a-z0-9][a-z0-9._-]*$ ]]; then
   exit 2
 fi
 
-if (( is_spring )); then
+if (( is_spring )) || (( is_fullstack )); then
   if [[ ! "$java_package" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$ ]]; then
-    echo "spring-boot template requires --package with a valid Java package, e.g. com.mycompany.myapp." >&2
+    echo "This mode requires --package with a valid Java package, e.g. com.mycompany.myapp." >&2
     exit 2
   fi
 fi
@@ -96,7 +130,9 @@ if (( node_major < 20 )); then
   exit 1
 fi
 
-if (( is_spring )); then
+if (( is_fullstack )); then
+  input="$(printf '%s\n%s\n%s\n%s\n' "preset:$preset" "$project_name" "$java_package" "$description")"
+elif (( is_spring )); then
   input="$(printf '%s\n%s\n%s\n%s\n' "$template" "$project_name" "$java_package" "$description")"
 else
   input="$(printf '%s\n%s\n%s\n' "$template" "$project_name" "$description")"
@@ -107,7 +143,12 @@ fi
   printf '%s' "$input" | npx --yes create-wl-app@latest create
 )
 
-if (( is_spring )); then
+if (( is_fullstack )); then
+  if [[ ! -f "$destination/cwa.config.json" ]]; then
+    echo "Generator finished without creating a valid full-stack project at: $destination" >&2
+    exit 1
+  fi
+elif (( is_spring )); then
   if [[ ! -d "$destination/src/main/java" ]]; then
     echo "Generator finished without creating a valid backend project at: $destination" >&2
     exit 1

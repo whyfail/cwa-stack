@@ -53,9 +53,13 @@ npx create-wl-app create
 
 ### 🎯 步骤 2：选择技术栈、应用类型和模板
 
-根据提示先选择技术栈，再选择单页面应用或 SSR，最后选择具体模板：
+根据提示先选择创建方式（独立项目 / 全栈组合项目），独立项目再依次选择技术栈、单页面应用或 SSR、具体模板：
 
 ```
+? 请选择创建方式：
+❯ 独立项目
+  全栈组合项目
+
 ? 请选择技术栈：
 ❯ React
   Vue
@@ -67,6 +71,19 @@ npx create-wl-app create
 ? 请选择模板：
 ❯ Vite React 企业级模板（vite-react）
 ```
+
+### ⚡ 非交互与全栈组合创建
+
+```bash
+# 独立创建（--template 与 --preset 互斥）
+npx create-wl-app create my-web --template vite-react --description "My web application"
+npx create-wl-app create my-api --template spring-boot --package com.example.myapi
+
+# 全栈组合：一次生成前端 apps/web + Spring Boot apps/api 的单 Git 仓库工程
+npx create-wl-app create my-app --preset react-spring --package com.example.myapp
+```
+
+四个全栈预设：`react-spring`、`vue-spring`、`next-spring`、`nuxt-spring`。生成后进入项目执行 `pnpm run setup` 完成环境初始化（setup、dev、verify、doctor、api:generate 五个根级命令）。
 
 ### 📝 步骤 3：填写项目信息
 

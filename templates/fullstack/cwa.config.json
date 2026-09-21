@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "preset": "{{{ preset }}}",
+  "frontend": {
+    "template": "{{{ frontendTemplate }}}",
+    "directory": "apps/web",
+    "port": {{{ webPort }}}
+  },
+  "backend": {
+    "template": "{{{ backendTemplate }}}",
+    "directory": "apps/api",
+    "applicationPort": 8080,
+    "managementPort": 9090
+  },
+  "contract": {
+    "source": "apps/api/openapi.yaml",
+    "generatedClient": "apps/web/src/shared/api/generated"
+  },
+  "commands": {
+    "setup": "pnpm run setup",
+    "dev": "pnpm run dev",
+    "verify": "pnpm run verify",
+    "doctor": "pnpm run doctor"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "{{{ name }}}",
+  "private": true,
+  "version": "0.1.0",
+  "description": "{{{ description }}}",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "node scripts/dev.mjs",
+    "verify": "node scripts/verify.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "api:generate": "node scripts/generate-api.mjs"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "templates": {
+    "vite-react": "https://gitee.com/whyfail/vite_react_init.git",
+    "vite-vue3": "https://gitee.com/whyfail/vite_vue3_init.git",
+    "next-react-ssr": "https://github.com/whyfail/vite_react_ssr_init.git",
+    "nuxt-vue3-ssr": "https://github.com/whyfail/vite_vue3_ssr_init.git",
+    "spring-boot": "https://github.com/whyfail/springboot-template.git"
+  },
+  "presets": {
+    "react-spring": {
+      "frontend": "vite-react",
+      "backend": "spring-boot",
+      "webPort": 5173
+    },
+    "vue-spring": {
+      "frontend": "vite-vue3",
+      "backend": "spring-boot",
+      "webPort": 5173
+    },
+    "next-spring": {
+      "frontend": "next-react-ssr",
+      "backend": "spring-boot",
+      "webPort": 3000
+    },
+    "nuxt-spring": {
+      "frontend": "nuxt-vue3-ssr",
+      "backend": "spring-boot",
+      "webPort": 3000
+    }
+  }
+}
