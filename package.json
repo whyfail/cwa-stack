@@ -1,6 +1,6 @@
 {
   "name": "cwa-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI 时代的全栈工程引擎：一条命令生成前后端真实联通、可验证、可交付的企业级全栈工程（原 create-wl-app）",
   "bin": {
     "cwa-stack": "bin/cwa-stack.js"

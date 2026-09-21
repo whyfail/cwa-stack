@@ -49,6 +49,27 @@ npx cwa-stack create my-api --template spring-boot --package com.example.myapi
 printf '%s\n' 'preset:react-spring' 'my-app' 'com.example.myapp' | npx cwa-stack create
 ```
 
+## 🤖 AI Agent 技能
+
+随包发布 `create-app` Agent 技能（Agent Skills 规范：`SKILL.md` + `scripts/`），支持技能的 Agent（Claude Code / Codex / ZCode 等）可以一句话完成项目创建与初始化。
+
+**方式一：Claude Code 插件市场（推荐）**
+
+```bash
+/plugin marketplace add whyfail/cwa-stack
+/plugin install create-app@cwa-stack
+```
+
+**方式二：手动安装（任意支持 Agent Skills 的 CLI）**
+
+```bash
+git clone --depth 1 https://github.com/whyfail/cwa-stack.git /tmp/cwa-stack
+mkdir -p ~/.claude/skills   # ZCode 用户装到 ~/.agents/skills
+cp -R /tmp/cwa-stack/skills/create-app ~/.claude/skills/
+```
+
+安装后对 Agent 说「用 cwa-stack 创建一个全栈项目」即可；npm 包 `cwa-stack` 内同样携带该技能（`skills/create-app/`）。
+
 ## 🗂️ 组合工程结构
 
 ```text

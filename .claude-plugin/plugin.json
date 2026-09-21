@@ -1,0 +1,25 @@
+{
+  "name": "create-app",
+  "description": "cwa-stack 全栈工程引擎的 Agent 技能：一句话创建前后端真实联通、可验证的企业级全栈工程（React / Vue 3 / Next.js / Nuxt × Spring Boot，OpenAPI 契约驱动）",
+  "version": "1.0.1",
+  "author": {
+    "name": "wulei",
+    "url": "https://github.com/whyfail"
+  },
+  "homepage": "https://whyfail.github.io/cwa-docs/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whyfail/cwa-stack.git"
+  },
+  "license": "ISC",
+  "keywords": [
+    "scaffold",
+    "fullstack",
+    "vue",
+    "react",
+    "nextjs",
+    "nuxt",
+    "springboot",
+    "openapi"
+  ]
+}
