@@ -212,8 +212,8 @@ my-awesome-app/
 
 ### 🤝 社区支持
 
-- [GitHub 仓库](https://github.com/whyfail/create-wl-app) - 给我们一个 star 支持
-- [Issues](https://github.com/whyfail/create-wl-app/issues) - 报告问题或提出建议
+- [GitHub 仓库](https://github.com/whyfail/cwa-stack) - 给我们一个 star 支持
+- [Issues](https://github.com/whyfail/cwa-stack/issues) - 报告问题或提出建议
 
 ---
 
