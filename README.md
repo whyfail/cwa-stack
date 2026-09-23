@@ -53,19 +53,33 @@ printf '%s\n' 'preset:react-spring' 'my-app' 'com.example.myapp' | npx cwa-stack
 
 随包发布 `create-app` Agent 技能（Agent Skills 规范：`SKILL.md` + `scripts/`），支持技能的 Agent（Claude Code / Codex / ZCode 等）可以一句话完成项目创建与初始化。
 
-**方式一：Claude Code 插件市场（推荐）**
+**方式一：skills CLI 一键安装（推荐）**
+
+```bash
+npx skills add whyfail/cwa-stack -g
+```
+
+`-g` 表示安装为全局（用户级）技能；CLI 会自动发现 `create-app` 技能并识别本机已安装的 Agent（Codex / ZCode / Claude Code 等），加 `-y` 可跳过确认。
+
+**方式二：手动安装（Codex / ZCode 等）**
+
+```bash
+git clone --depth 1 https://github.com/whyfail/cwa-stack.git /tmp/cwa-stack
+
+# Codex：拷贝到 ~/.codex/skills/
+mkdir -p ~/.codex/skills
+cp -R /tmp/cwa-stack/skills/create-app ~/.codex/skills/
+
+# ZCode：拷贝到 ~/.agents/skills/
+mkdir -p ~/.agents/skills
+cp -R /tmp/cwa-stack/skills/create-app ~/.agents/skills/
+```
+
+**方式三：Claude Code 插件市场**
 
 ```bash
 /plugin marketplace add whyfail/cwa-stack
 /plugin install create-app@cwa-stack
-```
-
-**方式二：手动安装（任意支持 Agent Skills 的 CLI）**
-
-```bash
-git clone --depth 1 https://github.com/whyfail/cwa-stack.git /tmp/cwa-stack
-mkdir -p ~/.claude/skills   # ZCode 用户装到 ~/.agents/skills
-cp -R /tmp/cwa-stack/skills/create-app ~/.claude/skills/
 ```
 
 安装后对 Agent 说「用 cwa-stack 创建一个全栈项目」即可；npm 包 `cwa-stack` 内同样携带该技能（`skills/create-app/`）。
