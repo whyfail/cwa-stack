@@ -32,7 +32,7 @@
 
 ## 🚀 快速开始
 
-环境要求：Git、Node.js 24 LTS、pnpm 11；全栈组合另需 Java 25 与 Docker。
+环境要求：Git、Node.js 24 LTS（`>=24.15.0 <25`）、pnpm 12.16.1（由前端模板的 `packageManager` 钉定）；全栈组合另需 Java 25 与 Docker。
 
 ```bash
 # 交互式：选择独立项目或全栈组合
